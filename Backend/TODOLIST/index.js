@@ -3,12 +3,26 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
+let allNotes = [];
+let workNotes = [];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", { today });
+  res.render("index.ejs", { today, allNotes });
+});
+app.get("/work", (req, res) => {
+  res.render("work.ejs", { today, workNotes });
+});
+
+app.post("/submit", (req, res) => {
+  allNotes.push(req.body["usernote"]);
+  res.render("index.ejs", { allNotes, today });
+});
+app.post("/submitw", (req, res) => {
+  workNotes.push(req.body["usernote"]);
+  res.render("work.ejs", { workNotes, today });
 });
 const days = [
   "Sunday",

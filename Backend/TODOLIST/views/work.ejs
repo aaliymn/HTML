@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+<div class="container toplinks">
+  <a href="/">Daily</a>
+  <a href="/work">Work</a>
+</div>
+<div class="main">
+  <div class="container date">
+    <h2><%= today %></h2>
+  </div>
+  <div class="container list">
+    <% if (locals.workNotes){ %> <% for ( let i = 0; i < workNotes.length; i++){
+    %>
+    <div class="item" id="<%= workNotes[i] %>">
+      <p><%= workNotes[i] %></p>
+      <button id="delitem">X</button>
+    </div>
+    <% }} %>
+
+    <div class="userinput">
+      <form action="/submitw" method="post">
+        <input
+          type="text"
+          name="usernote"
+          placeholder="Write your note here"
+          id="tinput"
+        />
+        <input id="binput" type="submit" value="+" />
+      </form>
+    </div>
+  </div>
+</div>

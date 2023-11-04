@@ -1,9 +1,13 @@
 body {
   background-color: rgb(185, 218, 255);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+.main {
+  display: flex;
+  flex-direction: column;
 }
 .container {
   padding: 10px;
@@ -14,21 +18,81 @@ body {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .date {
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-size: large;
   user-select: none;
 }
-.date h1 {
+.date h2 {
   margin: 0;
 }
 .item {
+  height: 51px;
+  max-height: 51px;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  margin: 10px 20px;
+  border-radius: 15px;
+  transition: 0.03s;
 }
-.item input {
-  border-radius: 5px;
-  text-align: center;
+.item p {
+  margin-left: 10px;
+}
+#delitem {
+  border: none;
+  background: none;
+  width: 50px;
+  padding: 0;
+  font-size: larger;
+  border-radius: 15px;
+}
+#delitem:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  background-color: rgb(185, 218, 255);
+}
+.item:hover {
+  background-color: rgb(228, 228, 228);
+}
+.userinput {
   padding: 10px;
   margin: 0 10px;
+}
+#tinput {
+  border-radius: 20px;
+  font-size: large;
   border: none;
+  padding: 10px;
+}
+#input:focus-visible {
+  outline: none;
+}
+#binput {
+  margin-left: 5px;
+  border: none;
+  border-radius: 50%;
+  font-size: x-large;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(185, 218, 255);
+}
+#binput:hover {
+  background-color: rgb(138, 193, 255);
+}
+.toplinks {
+  display: inline-block;
+  margin: 20px 0;
+}
+.toplinks a {
+  color: rgb(0, 66, 141);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.1s;
+  padding: 5px;
+  border-radius: 10px;
+}
+.toplinks a:hover {
+  background-color: rgb(0, 66, 141);
+  color: aliceblue;
 }
